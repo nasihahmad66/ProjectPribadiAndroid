@@ -60,7 +60,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     }
 
     public interface IPopularAdapter {
-        void showDetail(String poster_path, String overview, String release_date, String title, String backdrop_path, String vote_average);
+        void showDetail(String poster_path, String overview, String release_date, String title, String backdrop_path, String vote_average, String original_language, String popularity, String vote_count );
     }
 
     public class  ViewHolder extends RecyclerView.ViewHolder
@@ -70,6 +70,9 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         TextView tvDesc;
         TextView tvRelease;
         TextView tvRating;
+        TextView tvPopularity;
+        TextView tvVote;
+        TextView tvLanguage;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -78,11 +81,12 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             tvDesc = (TextView) itemView.findViewById(R.id.textViewOverview);
             tvRelease = (TextView) itemView.findViewById(R.id.textViewDate);
             tvRating = (TextView) itemView.findViewById(R.id.textViewRating);
+            tvPopularity = (TextView) itemView.findViewById(R.id.VoteAverage);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Popular popular = list.get(getAdapterPosition());
-                    mIPopularAdapter.showDetail(popular.poster_path, popular.overview, popular.release_date, popular.title, popular.backdrop_path, popular.vote_average);
+                    mIPopularAdapter.showDetail(popular.poster_path, popular.overview, popular.release_date, popular.title, popular.backdrop_path, popular.vote_average, popular.original_language, popular.popularity,popular.vote_count);
                 }
             });
         }

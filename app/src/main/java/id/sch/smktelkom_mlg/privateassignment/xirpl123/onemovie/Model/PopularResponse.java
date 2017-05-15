@@ -9,5 +9,4 @@ import java.util.List;
 public class PopularResponse {
     public int page;
     public List<Popular> results;
-    public List<Popular> resat;
 }
