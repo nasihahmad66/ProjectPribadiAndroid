@@ -58,7 +58,7 @@ public class PopularFragment extends Fragment {
 
     private void downloadData()
     {
-        String url="https://api.themoviedb.org/3/movie/popular?api_key=e7a095ca67a422c6b365856d5c949367";
+        String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=e7a095ca67a422c6b365856d5c949367";
 
         GsonGetRequest<PopularResponse> myRequest = new GsonGetRequest<PopularResponse>
                 (url, PopularResponse.class, null, new Response.Listener<PopularResponse>()

@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_Movies) {
             fragment = new PopularFragment();
-            setTitle("Popular");// Handle the camera action
+            setTitle("Now Playing");
         } else if (id == R.id.nav_favorite) {
             fragment = new FavoriteFragment();
             setTitle("Favorite");
